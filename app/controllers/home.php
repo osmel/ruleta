@@ -27,7 +27,7 @@ class Home extends CI_Controller {
 			$this->load->view( 'juegos/jugar');
 
 		} else {
-			//$this->load->view( 'tickes/dashboard_ticket');
+			
 			 redirect('registro_ticket');
 
 		}
@@ -45,52 +45,24 @@ class Home extends CI_Controller {
 
 	function respuesta_tarjeta(){ 
 		
-		$figura =  $this->input->post( 'figura' );
-		//$valor =  $this->input->post( 'valor' );
-
-		$valor =  0;
-		switch ($this->input->post( 'valor' )) {
-		    case 1:
-		        $valor =  150;
-		        break;
-		    case 2:
-		        $valor =  100;
-		        break;
-
-			case 3:
-		        $valor =  75;
-		        break;
-			case 4:
-		        $valor =  50;
-		        break;		        
-		}
-
+		$valor = (int)$this->input->post( 'valor' );
 		
-		//$data['formato'] = $this->session->userdata('tarjeta_participante').$figura.'+'.';';
-		$data['formato'] = $this->session->userdata('tarjeta_participante').$figura.'+'.$valor.'-'.';';
+		$pos = base64_decode($this->session->userdata('cripto_ruleta'));
+		//pos y valor
+		$data['formato'] = $this->session->userdata('tarjeta_participante').$pos.'+'.$valor.'-'.';';
+
+		$data['posicion'] = $pos;
+		$data['valor'] = $valor;
+
 
 
 		//if guarda bien entonces
 		$data 		  		= $this->security->xss_clean( $data );
 		$guardar	 		= $this->modelo_registro->actualizar_respuesta_tarjeta( $data );
-			//print_r($this->session->userdata('tarjeta_participante')."aaa");
-			//print_r($this->session->userdata('num_ticket_participante'));
-		
-			//print_r($data['formato']);die;
 		if ( $guardar !== FALSE ){  
 			$this->session->set_userdata('tarjeta_participante', $data['formato']);
 		}	
 
-		/*
-		if  ( substr_count($this->session->userdata('tarjeta_participante'),';')<4) {
-				$data['redireccion']='tarjetas';
-		} else if ( strlen($this->session->userdata('juego_participante'))!=3) {
-				$data['redireccion']= 'juegos';		
-				//$data['redireccion']= 'modal_tarjeta';		que esta redireccionará al juego
-		} else {
-				$data['redireccion'] = '';	
-		}	
-		*/
 		
 		
 		echo json_encode($data);        

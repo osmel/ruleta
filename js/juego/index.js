@@ -22,13 +22,13 @@ function loadJSON(callback) {
 function myResult(e) {
   //e is the result object
 
-    console.log(e);
-    console.log('Spin Count: ' + e.spinCount + ' - ' + 'Win: ' + e.win + ' - ' + 'Message: ' +  e.msg);
+    //console.log(e);
+    //console.log('Spin Count: ' + e.spinCount + ' - ' + 'Win: ' + e.win + ' - ' + 'Message: ' +  e.msg);
 
     // if you have defined a userData object...
     if(e.userData){
       
-      console.log('User defined score: ' + e.userData.score)
+      //console.log('User defined score: ' + e.userData.score)
 
     }
 
@@ -37,7 +37,7 @@ function myResult(e) {
  
   if(e.spinCount == 1){
     // mostrar el progreso del juego cuando el spinCount es 3 
-    console.log(e.target.getGameProgress());
+    //console.log(e.target.getGameProgress());
     //reiniciarlo si te gusta 
     //e.target.restart();
   }  
@@ -47,14 +47,43 @@ function myResult(e) {
 //su propia función para capturar cualquier errores
 function myError(e) {
   //e is un objeto error
-  console.log('Cantidad de giros: ' + e.spinCount + ' - ' + 'Message: ' +  e.msg);
+  //console.log('Cantidad de giros: ' + e.spinCount + ' - ' + 'Message: ' +  e.msg);
 
 }
 
 function myGameEnd(e) {
-  //e es gameResultsArray
+          //si es la primera vez entonces
+       
 
-  //console.log(e);
+   valor=e.results[0].userData.score;
+                        jQuery.ajax({ //guardar en la cookie el conteo
+                                url : '/respuesta_tarjeta',
+                                data : { 
+                                       //figura: $(this).parent().attr('carta'),
+                                       valor: valor, //$(this).parent().attr('valor'),
+                                },
+                                type : 'POST',
+                                dataType : 'json',
+                                success : function(data) {  
+                                        localStorage.setItem('virada',  parseInt(localStorage.getItem('virada'))+1 );
+                                        if ( parseInt(localStorage.getItem('virada')) >=1) {
+                                            //localStorage.setItem('virada',  0 );
+                                            var url = "/proc_modal_juego";  
+                                            
+                                            jQuery('#modalMessage').modal({
+                                                backdrop: 'static',
+                                                keyboard: false, 
+                                                show:'true',
+                                                remote:url,
+                                            });
+                                        }
+                                      return false;
+                                }
+                        }); 
+
+
+
+  /*
   var url = "/proc_modal_juego";  
                 
                 jQuery('#modalMessage').modal({
@@ -63,6 +92,7 @@ function myGameEnd(e) {
                     show:'true',
                     remote:url,
                 });
+                */
   /*
    var url = "/proc_modal_ticket/"+jQuery.base64.encode(minutes + ':' + seconds)+'/'+jQuery.base64.encode(1);
         jQuery('#modalMessage').modal({
@@ -95,7 +125,32 @@ function myGameEnd(e) {
 */
 
 function init() {
+
+
+
     loadJSON(function(response) {
+
+    if (!(localStorage.getItem('virada'))) {
+            localStorage.setItem('virada',  0 );
+        }
+
+
+          if ( parseInt(localStorage.getItem('virada')) >=1) {
+               // alert('aa');
+                //localStorage.setItem('virada',  0 );
+                //alert('aa');
+                var url = "/proc_modal_juego";  
+                
+                jQuery('#modalMessage').modal({
+                    backdrop: 'static',
+                    keyboard: false, 
+                    show:'true',
+                    remote:url,
+                });
+
+            } 
+
+
       // Parse JSON string to an object
       var jsonData = JSON.parse(response);
       //if you want to spin it using your own button, then create a reference and pass it in as spinTrigger
