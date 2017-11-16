@@ -12,9 +12,12 @@
 
 
 <div class="intro juego">
+
+
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center contadores">
-		
-        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+	
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h1>GIRA LA RULETA Y ACUMULA PUNTOS</h1>
             <div class="wheelContainer">       
                 <svg class="wheelSVG" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" text-rendering="optimizeSpeed">
                     <defs>
@@ -57,8 +60,13 @@
 
 
 
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-			 <button type="button"    class="spinBtn btn btn-danger" >GIRAR</button>
+        
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+            
+             <button type="button" class="spinBtn" style="background-color: transparent;
+    border: 0px;display: inline-block;"><img src="<?php echo base_url()?>img/boton.png"></button>
+                <h1 style="display: inline-block;"> GIRAR</h1>
+            
 		</div>
 
 		<!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center">
