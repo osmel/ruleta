@@ -22,9 +22,12 @@ class Home extends CI_Controller {
   		if($this->session->userdata('session_participante') === TRUE ){
 		if ($this->session->userdata('num_ticket_participante')) {
 				//redirect('/tarjetas');
-			  	
+							  	
 			   	//$this->load->view( 'juegos/tarjetas');
-			$this->load->view( 'juegos/jugar');
+
+			$data["id_participante"] = $this->session->userdata('id_participante');
+			$dato 		=   $this->modelo_registro->record_personal($data);
+			$this->load->view( 'juegos/jugar',$dato);
 
 		} else {
 			

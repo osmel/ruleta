@@ -320,8 +320,12 @@ FROM calimax_registro_participantes
 
         }
 
+/*
+SELECT AES_DECRYPT( juego,  'gtg5igLZasUC3xNfDlvTGBxxkoMuR6FaCYw5' ) AS juego, AES_DECRYPT( tarjeta, 'gtg5igLZasUC3xNfDlvTGBxxkoMuR6FaCYw5' ) AS tarjeta, id_pregunta, responder, AES_DECRYPT( posicion, 'gtg5igLZasUC3xNfDlvTGBxxkoMuR6FaCYw5' ) AS posicion, AES_DECRYPT( valor,  'gtg5igLZasUC3xNfDlvTGBxxkoMuR6FaCYw5' ) AS valor
+FROM calimax_registro_participantes
 
- 
+*/
+
 
         public function record_personal($data){
              $this->db->select("COUNT(r.id_participante) as 'cantidad'");
@@ -331,17 +335,7 @@ FROM calimax_registro_participantes
 
 
                   (
-                  (r.responder=1)* (  SUBSTRING_INDEX
-                    (             SUBSTRING_INDEX(AES_DECRYPT( r.tarjeta,  '{$this->key_hash}'),'-;',1),'+',-1
-
-                    ) + 
-
-                    SUBSTRING_INDEX
-                     (
-                    SUBSTRING_INDEX(AES_DECRYPT( r.tarjeta,  '{$this->key_hash}'),'+',-1)
-                    ,'-;',1
-
-                    )) 
+                  (r.responder=1)* (AES_DECRYPT( r.valor,  '{$this->key_hash}')) 
                 )    +
 
 
