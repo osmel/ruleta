@@ -159,7 +159,7 @@ li.logo_casaley img {
 
 /*JUEGO*/
 .wheelContainer {
-  margin-bottom: 60px;
+  height: 686px !important;
 }
 .wheel g:nth-child(even) path {
   fill:#a81d22;
@@ -928,8 +928,8 @@ footer .vigencia {
 
 }
 .modal-content{
-      background-color: rgba(138, 112, 59, 0.9);
-      padding: 30px 0px;
+      background-color: #c90e2b;
+    padding: 40px 0px;
 }
 .home img{
   width: 100%;
@@ -937,29 +937,28 @@ footer .vigencia {
 .home div{
   padding: 0px;
 }
+.modal-footer{
+  border-top: 0px !important;
+}
 .btn_respuesta{
   width: 71%;
-    font-size: 33px;
-  background: #e2cb7e;
-    background-image: -webkit-linear-gradient(top, #e2cb7e, #a1854e);
-    background-image: -moz-linear-gradient(top, #e2cb7e, #a1854e);
-    background-image: -ms-linear-gradient(top, #e2cb7e, #a1854e);
-    background-image: -o-linear-gradient(top, #e2cb7e, #a1854e);
-    background-image: linear-gradient(to bottom, #e2cb7e, #a1854e);
-    -webkit-border-radius: 17;
-    -moz-border-radius: 17;
-    border-radius: 17px;
-    color: #313132;
-   
-    padding: 10px 20px 6px 20px;
-    border: solid #a68a48 3px;
+   background: #43622d;
+    border-radius: 47px;
+    color: #ffffff;
+    font-size: 25px;
+    padding: 7px 30px 4px 30px;
+    border: solid #77a554 3px;
     text-decoration: none;
     cursor: pointer;
     font-family: Bebasbold;
+    font-style: italic;
 }
 .opcionesrespuesta{
     font-family: Bebasbold;
     padding: 20px 0px;
+}
+.modal-header{
+  border-bottom: 0px !important;
 }
 .btn_respuesta:hover{
   border: solid #4e3e18 3px;
@@ -972,6 +971,7 @@ footer .vigencia {
     display: inline-block;
     padding: 0px 81px;
     font-family: 'Bebasnormal';
+    margin-bottom: 33px;
 }
 .pregunta{
   font-size: 34px;
@@ -988,17 +988,18 @@ footer .vigencia {
   font-weight: bold;
 }
 .puntoscontenedor{
-      background-color: #7f6b42;
+        background-color: transparent;
     padding: 1px 15px;
     font-size: 40px;
     display: inline-block;
     margin-bottom: 25px;
-    border-radius: 12px;
+    border-radius: 0px;
     font-weight: bold;
-    color: black;
+    color: white;
     min-width: 106px;
     text-align: center;
-        width: 100%;
+    width: 100%;
+    border: 1px solid #ffffff;
 }
 .titulosmarcador{
   font-size: 38px;
@@ -2160,8 +2161,7 @@ a:hover, a:focus {
   .navegacion {
     position: absolute;
     right: 0%;
-    transform: translateX(-7%);
-    display: inline-table;
+    transform: translateX(-51%);
   }
 }
 
