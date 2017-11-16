@@ -44,7 +44,7 @@
                return False;
             $result->free_result();
         }  
-        
+
 
          public function actualizar_redes_compartir($data){
              $this->db->set( 'redes', $data['redes'] );
@@ -272,6 +272,9 @@
 
          public function actualizar_respuesta_tarjeta($data){
             $this->db->set( 'tarjeta', "AES_ENCRYPT('{$data['formato']}','{$this->key_hash}')", FALSE );
+            $this->db->set( 'posicion', "AES_ENCRYPT('{$data['posicion']}','{$this->key_hash}')", FALSE );
+            $this->db->set( 'valor', "AES_ENCRYPT('{$data['valor']}','{$this->key_hash}')", FALSE );
+
             $this->db->where("id_participante", '"'.$this->session->userdata('id_participante').'"',false);  
             $this->db->where('ticket',"AES_ENCRYPT('{$this->session->userdata('num_ticket_participante')}','{$this->key_hash}')",FALSE);
              $this->db->update($this->registro_participantes );
@@ -286,8 +289,15 @@
         }
 
         /*
-          SELECT AES_DECRYPT( juego,  'gtg5igLZasUC3xNfDlvTGBxxkoMuR6FaCYw5' ) AS juego, AES_DECRYPT( tarjeta, 'gtg5igLZasUC3xNfDlvTGBxxkoMuR6FaCYw5' ) AS tarjeta, id_pregunta, AES_DECRYPT( responder, 'gtg5igLZasUC3xNfDlvTGBxxkoMuR6FaCYw5' ) AS responder
+                   SELECT AES_DECRYPT( juego,  'gtg5igLZasUC3xNfDlvTGBxxkoMuR6FaCYw5' ) AS juego, 
+AES_DECRYPT( tarjeta, 'gtg5igLZasUC3xNfDlvTGBxxkoMuR6FaCYw5' ) AS tarjeta, 
+id_pregunta, AES_DECRYPT( responder, 'gtg5igLZasUC3xNfDlvTGBxxkoMuR6FaCYw5' ) AS responder,
+AES_DECRYPT( posicion, 'gtg5igLZasUC3xNfDlvTGBxxkoMuR6FaCYw5' ) AS posicion, 
+AES_DECRYPT( valor, 'gtg5igLZasUC3xNfDlvTGBxxkoMuR6FaCYw5' ) AS valor 
+
 FROM calimax_registro_participantes
+
+
 
         */
 
