@@ -775,6 +775,7 @@ public function buscador_participantes($data){
           $this->db->select("(p.redes=1)* 100 AS TOTAL_PUNTOS_FACEBOOK", FALSE);    
           $this->db->select("COUNT(r.id_participante) as 'TICKETS_REGISTRADOS'");
           $this->db->select("sum(AES_DECRYPT(r.monto,'{$this->key_hash}') ) AS PUNTOS_OBTENIDOS_COMPRA", FALSE);
+          /*
           $this->db->select("
              sum(
 
@@ -791,6 +792,27 @@ public function buscador_participantes($data){
                     ,'-;',1
 
                     )) 
+                )    +
+
+
+                (
+                  (r.responder<>1)* 25
+                ) 
+               
+
+               )+
+                (
+                  (p.redes=1)* 100
+                ) AS TOTAL_PUNTOS_ACUMULADOS
+
+              ",false );*/
+
+          $this->db->select("
+             sum(
+
+
+                  (
+                  (r.responder=1)* (AES_DECRYPT( r.valor,  '{$this->key_hash}')) 
                 )    +
 
 
