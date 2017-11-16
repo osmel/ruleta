@@ -71,7 +71,7 @@
 
 					
 
-		<div class="col-lg-4 col-lg-offset-5 col-md-4 col-md-offset-5 col-sm-12 col-xs-12">
+		<div class="col-lg-6 col-lg-offset-4 col-md-6 col-md-offset-4 col-sm-12 col-xs-12">
            <span class="help-block" style="color:white;" id="msg_general"> </span>
         </div>
 					

@@ -154,8 +154,14 @@ li.logo_casaley img {
   
 }
 
-
-
+.giras{
+      margin-bottom: -100px;
+    margin-top: 100px;
+    font-family: Bebasbold;
+}
+.giras2{
+    font-family: Bebasbold;
+}
 /*JUEGO*/
 .wheelContainer {
   height: 686px !important;
@@ -1716,7 +1722,7 @@ a:hover{
 .help-block {
   margin-bottom: 0px;
   font-size: 14px;
-  color: red !important;
+  color: #ffffff !important;
 }
 
 a.ver-ticket {
@@ -1754,10 +1760,18 @@ img.img-center {
 /*logout top*/
 
 .login_out .dropdown-menu {
-  background-color: #ebbb34;
+  background-color: #842121;
   border-radius: 0;
 }
+.ganastext{
+      font-size: 51px;
+    color: #4b8840;
+    font-family: Bebasbold;
 
+}
+#modalMessage3 .modal-content{
+  background-color: black;
+}
 .login_out .dropdown-menu>li>a {
     color: #fff;
 }
