@@ -18,13 +18,13 @@
 		</div>
 
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center">
-			<div class="countdown">28.55</div>
-			<h5>SEGUNDOS RESTANTES</h5>
+			<div class="countdown"><?php echo $cantidad; ?></div>
+			<h5>Cantidad de veces Jugas</h5>
 
 		</div>
 		
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center">			
-			<div class="cant">2500</div>
+			<div class="cant"><?php echo $total_iguales; ?></div>
 			<h5>CORAZONES ACUMULADOS <br>EN TU CUENTA</h5>
 		</div>		   	    	
 	</div>
