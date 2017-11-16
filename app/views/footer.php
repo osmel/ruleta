@@ -9,7 +9,7 @@
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 copy text-center">
 				<p></p>
-				 <p class="vigencia">Vigencia de la promoción: del 15 de Noviembre al 31 de Diciembre de 2017. Para mayor información consulta bases, términos y condiciones.</p>
+				 <p class="vigencia">texto final 2017</p>
 			</div>
 			<!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right"> -->
 				<!-- <img src="<?php echo base_url().$this->session->userdata('c6'); ?>"> -->
@@ -54,7 +54,12 @@
 	
 	
 	<!-- Juego -->	
-	<script type="text/javascript" src="<?php echo base_url(); ?>js/juego/jquery.slotmachine.js"></script>
+	<!-- <script type="text/javascript" src="<?php echo base_url(); ?>js/juego/jquery.slotmachine.js"></script> -->
+
+
+
+
+
 
 	<!-- mask -->	
   <script src="<?php echo base_url(); ?>js/assets/global/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js" type="text/javascript"></script>
@@ -77,9 +82,6 @@
   <!-- Fecha Dropdowns  -->
 
 	<script src="<?php echo base_url(); ?>js/fechaDropdowns/jquery.date-dropdowns.js"></script>
-
-	<!-- Juego de flipear tarjetas -->
-	<script type="text/javascript" src="<?php echo base_url(); ?>js/jquery.flip.js"></script>
 
   <!-- nuestro js principal -->
 

@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
 
- console.log(  (jQuery.base64.decode('MjEx') )   );
+ //console.log(  (jQuery.base64.decode('MjEx') )   );
  
 
 	var opts = {
@@ -132,6 +132,46 @@ jQuery(document).ready(function($) {
 		return false;
 	});
 
+                  //cuando se oculta la ventana modal de felicidades se redirige al 
+            jQuery("body").on('hide.bs.modal','#modalMessage3',function(e){    
+                $catalogo = jQuery(this).attr('direccion'); //e.target.name;
+                //alert($catalogo);
+                window.location.href = '/'+$catalogo;                           
+                //window.location.href = '/';
+            }); 
+
+                 jQuery('body').on('click','.btn_respuesta', function (e) {  
+
+                
+                  e.preventDefault();
+                    jQuery.ajax({ //guardar en la cookie el conteo
+                            url : '/respuesta_juego',
+                            data : { 
+                                   figura: $(this).attr('fig'),
+                                respuesta: $(this).attr('resp'),
+                                
+                            },
+                            type : 'POST',
+                            dataType : 'json',
+                            success : function(data) {  
+                                  localStorage.setItem('virada',  0 );
+
+                                  //redireccionar a record
+                                  //window.location.href = '/'+data.redireccion;        
+
+                                    //levantar la modal de felicidades
+                                    var url = "/proc_modal_felicidades";  
+                                    jQuery('#modalMessage3').modal({
+                                        show:'true',
+                                        remote:url,
+                                    });
+                                  return false;
+
+                            }
+
+                    }); 
+                    
+            });
 
 /////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////

@@ -21,6 +21,235 @@ class Registro extends CI_Controller {
 			   }   			
 	}
 
+	function juego_json1() {
+
+header('Content-type: application/json');
+$data = array(
+"colorArray" => array("#FF0000", 
+                      "#FFFFFF"
+                      ),
+
+"segmentValuesArray" => array( 
+
+	array(
+            "probability" => 0,
+            "type" => "string",
+            "value" => "100",
+            "win" => false,
+            "resultText" => "solo 100!",
+            "userData" => array("score" => 100)
+    ),
+
+
+    array(
+            "probability" => 100,
+            "type" => "string",
+            "value" => "2000",
+            "win" => true,
+            "resultText" => "Eres ganador!",
+            "userData" => array("score" => 2000)
+    ),
+
+
+    array(
+            "probability" => 0,
+            "type" => "string",
+            "value" => "500",
+            "win" => false,
+            "resultText" => "Solo 500!",
+            "userData" => array("score" => 500)
+    ),
+
+    array(
+            "probability" => 0,
+            "type" => "string",
+            "value" => "1000",
+            "win" => false,
+            "resultText" => "Solo 1000!",
+            "userData" => array("score" => 1000)
+    ),
+
+
+
+    array(
+            "probability" => 0,
+            "type" => "string",
+            "value" => "100",
+            "win" => false,
+            "resultText" => "solo 100!",
+            "userData" => array("score" => 100)
+    ),
+
+
+    array(
+            "probability" => 0,
+            "type" => "string",
+            "value" => "2000",
+            "win" => true,
+            "resultText" => "Eres ganador!",
+            "userData" => array("score" => 2000)
+    ),
+
+
+    array(
+            "probability" => 0,
+            "type" => "string",
+            "value" => "500",
+            "win" => false,
+            "resultText" => "Solo 500!",
+            "userData" => array("score" => 500)
+    ),
+
+    array(
+            "probability" => 0,
+            "type" => "string",
+            "value" => "1000",
+            "win" => false,
+            "resultText" => "Solo 1000!",
+            "userData" => array("score" => 1000)
+    ),
+
+
+
+),
+
+
+
+
+"svgWidth" => 1024,
+"svgHeight" => 768,
+
+//Rueda principal
+"wheelStrokeColor" => "#FFFFFF", //"#D0BD0C", //HEX, RGB o RGBA valor para el color del contorno principal de la rueda
+"wheelStrokeWidth" => 18,        //ancho del borde principal de la rueda
+"wheelSize" => 700,   //Tamaño del diámetro de la rueda
+
+//texto que se encuentra dentro de cada segmento
+    "wheelTextOffsetY" => 150, //hasta qué punto el texto debe estar en el segmento
+    "wheelTextColor" => "#23CE3F",  //color del texto
+    "wheelTextSize" => "3.3em",  //font size “tamaño de la fuente
+
+//image que se encuentra dentro de cada segmento
+    "wheelImageOffsetY" => 40,
+    "wheelImageSize" => 50,
+
+//círculo central
+"centerCircleSize" => 120,               //diámetro del círculo central
+"centerCircleStrokeColor" => "#F1DC15",  //color del trazo del círculo central
+"centerCircleStrokeWidth" => 12,        //ancho del trazo del círculo central 
+"centerCircleFillColor" => "#EDEDED",    //color de relleno del círculo central 
+
+
+
+//Segmentos
+"segmentStrokeColor" => "#E2E2E2",  //HEX, RGB or RGBA valores para el contorno del segmento
+"segmentStrokeWidth" => 4,          //ancho del contorno segmento
+    "centerX" => 512,               //esto es por lo general la mitad del valor svgWidth 
+    "centerY" => 384,               //esto es por lo general la mitad del valor svgHeight
+    "hasShadows" => false,
+
+
+"numSpins" => 1 ,
+"minSpinDuration" =>1,
+"spinDestinationArray" => array(),
+
+"gameOverText" => "GRACIAS POR JUGAR LA RUEDA SPIN2WIN. VEN Y JUEGA DE NUEVO!!",
+"invalidSpinText" =>"SPIN INVALIDO. POR FAVOR GIRAR DE NUEVO.",
+"introText" => "Hola<br>lanza <span style='color=>#F282A9;'>1</span> para ganar!",
+"hasSound" => false, //true, //sonido
+"gameId" => "9a0232ec06bc431114e2a7f3aea03bbe2164f1aa",
+"clickToSpin" => true //true es obligatorio cuando se hable de "probabilidades"
+
+);
+
+echo json_encode( $data);
+
+	}
+	function juego_json() {
+
+
+				$segmentos = $this->modelo_registro->listado_segmentos();
+
+
+				if ( $segmentos != FALSE ){
+					foreach ($segmentos as $clave => $segmento) {
+						
+
+							$colores[] ='#'.$segmento->color;
+
+							$dato[]= array(
+	  							"probability" =>  (base64_decode($this->session->userdata('cripto_ruleta')) == ($clave+1) ) ? 100 : 0,
+	  							//"probability" =>  (8== ($clave+1) ) ? 100 : 0,
+					            "type" => "string",
+					            "value" => $segmento->valor,  //valor
+					            "win" => $segmento->ganar,   //ganar
+					            "resultText" => $segmento->texto,  //texto
+					            "userData" => array("score" => $segmento->puntos)  //puntos
+                               );				
+					}
+				}
+
+				//print_r($dato);die;
+				
+					
+				header('Content-type: application/json');
+				$data = array(
+				"colorArray" => $colores, 
+				"segmentValuesArray" => 
+					$dato,
+
+				"svgWidth" => 1024,
+				"svgHeight" => 768,
+
+				//Rueda principal
+				"wheelStrokeColor" => "#FFFFFF", //"#D0BD0C", //HEX, RGB o RGBA valor para el color del contorno principal de la rueda
+				"wheelStrokeWidth" => 18,        //ancho del borde principal de la rueda
+				"wheelSize" => 500,   //Tamaño del diámetro de la rueda
+
+				//texto que se encuentra dentro de cada segmento
+				    "wheelTextOffsetY" => 100, //hasta qué punto el texto debe estar en el segmento
+				    "wheelTextColor" => "#23CE3F",  //color del texto
+				    "wheelTextSize" => "2.3em",  //font size “tamaño de la fuente
+
+				//image que se encuentra dentro de cada segmento
+				    "wheelImageOffsetY" => 40,
+				    "wheelImageSize" => 50,
+
+				//círculo central
+				"centerCircleSize" => 120,               //diámetro del círculo central
+				"centerCircleStrokeColor" => "transparent",  //color del trazo del círculo central
+				//"centerCircleStrokeWidth" => 12,        //ancho del trazo del círculo central 
+				"centerCircleFillColor" => "transparent",    //color de relleno del círculo central 
+
+
+
+				//Segmentos
+				"segmentStrokeColor" => "#fff",  //HEX, RGB or RGBA valores para el contorno del segmento
+				"segmentStrokeWidth" => 4,          //ancho del contorno segmento
+				    "centerX" => 512,               //esto es por lo general la mitad del valor svgWidth 
+				    "centerY" => 384,               //esto es por lo general la mitad del valor svgHeight
+				    "hasShadows" => true,
+
+
+				"numSpins" => 1 ,
+				"minSpinDuration" =>6,
+				"spinDestinationArray" => array(),
+
+				"gameOverText" => "GRACIAS POR JUGAR LA RUEDA SPIN2WIN. VEN Y JUEGA DE NUEVO!!",
+				"invalidSpinText" =>"SPIN INVALIDO. POR FAVOR GIRAR DE NUEVO.",
+				//"introText" => "Hola<br>lanza <span style='color=>#F282A9;'>1</span> para ganar!",
+				"introText" => '',
+				"hasSound" => false, //true, //sonido
+				"gameId" => "9a0232ec06bc431114e2a7f3aea03bbe2164f1aa",
+				"clickToSpin" => true //true es obligatorio cuando se hable de "probabilidades"
+
+				);
+
+				echo json_encode( $data);
+
+	}
+
+
 	function registrar_facebook($puntos){ //nuevo
 			if ( $this->session->userdata( 'session_participante' ) == TRUE ){
 				
@@ -550,6 +779,12 @@ function validar_tickets(){
 						$ticket['puntos'] = base64_encode($cripto);
 						
 						$this->session->set_userdata('cripto', $ticket['puntos'] );
+
+
+						$segmento = mt_rand(1, 8); //$this->session->userdata('cantimagen')
+						$ticket['puntos'] = base64_encode($segmento);
+						$this->session->set_userdata('cripto_ruleta', $ticket['puntos'] );
+
 
 						//la pregunta que va a salir
 						$datos = $this->modelo_registro->listado_preguntas();

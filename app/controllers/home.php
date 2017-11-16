@@ -23,7 +23,8 @@ class Home extends CI_Controller {
 		if ($this->session->userdata('num_ticket_participante')) {
 				//redirect('/tarjetas');
 			  	
-			   	$this->load->view( 'juegos/tarjetas');
+			   	//$this->load->view( 'juegos/tarjetas');
+			$this->load->view( 'juegos/jugar');
 
 		} else {
 			//$this->load->view( 'tickes/dashboard_ticket');

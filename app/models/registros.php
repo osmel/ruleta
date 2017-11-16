@@ -30,6 +30,21 @@
 
     }
 
+          public function listado_segmentos(){
+
+            $this->db->select('c.id, c.nombre, c.valor, c.activo, c.puntos, c.ganar, c.color, c.texto');
+            
+            $this->db->from($this->catalogo_imagenes.' as c');
+            $this->db->where('c.activo',0);
+            $result = $this->db->get();
+            
+            if ( $result->num_rows() > 0 )
+               return $result->result();
+            else
+               return False;
+            $result->free_result();
+        }  
+        
 
          public function actualizar_redes_compartir($data){
              $this->db->set( 'redes', $data['redes'] );
