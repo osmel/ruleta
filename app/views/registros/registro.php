@@ -12,6 +12,9 @@
  echo form_open('validar_registros', $attr);
 ?>		
 <div class="container registro">	
+<div class="col-md-12 text-center" style="margin-top:30px;margin-bottom:20px">
+	<img src="<?php echo base_url()?>img/titregistro.png">
+</div>
 
 	<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 transparenciaformularios" style="float:none;margin:0px auto;">
 		
@@ -86,19 +89,7 @@
 						</div>
 					</div>	
 					
-
-					
-
-		
-				</div>
-
-
-				<!--derecha -->
-
-
-				<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-
-					<div class="form-group">
+<div class="form-group">
 					
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<input type="text" class="form-control" id="cp" name="cp" placeholder="CÓDIGO POSTAL">
@@ -122,6 +113,18 @@
 							
 						</div>
 					</div>
+					
+
+		
+				</div>
+
+
+				<!--derecha -->
+
+
+				<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+
+					
 						
 					<div class="form-group">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -169,14 +172,14 @@
 
 					
 					<div class="form-group">
-						<input style="float:left;width:20px;" type="checkbox" id="coleccion_id_aviso" value="1"  name="coleccion_id_aviso" />
+						<input style="float:left;width:20px;" checked type="checkbox" id="coleccion_id_aviso" value="1"  name="coleccion_id_aviso" />
 			              <label>
 			              		Acepto <a href="<?php echo base_url().'legales'; ?>" class="linkaviso" target="_blank">términos y condiciones</a>
 			              </label>
 			              <span class="help-block" id="msg_coleccion_id_aviso"> </span> 
 
 
-						  <input style="float:left;width:20px;" type="checkbox" id="coleccion_id_base" value="1"  name="coleccion_id_base" />
+						  <input style="float:left;width:20px;" checked type="checkbox" id="coleccion_id_base" value="1"  name="coleccion_id_base" />
 			              <label >
 			              		Acepto <a href="<?php echo base_url().'aviso'; ?>" class="linkaviso" target="_blank">el aviso de privacidad</a>
 			              </label>     
@@ -186,7 +189,13 @@
 			              
 
 					</div>
-			
+					
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+							<button type="submit" class="btn btn-info" value="REGISTRARME"/>
+								<span class="registrarm">REGISTRARME</span>
+							</button>
+					</div>
+
 				</div>
 
 		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -198,11 +207,7 @@
 				
 	</div>
 
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-				<button type="submit" class="btn btn-info" value="REGISTRARME"/>
-					<span class="registrarm">REGISTRARME</span>
-				</button>
-		</div>
+	
 </div>
 
 <?php echo form_close(); ?>

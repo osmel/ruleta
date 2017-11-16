@@ -9,7 +9,7 @@
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 copy text-center">
 				<p></p>
-				 <p class="vigencia">texto final 2017</p>
+				 <p class="vigencia">Vigencia de la promoción: del 15 de Noviembre al 31 de Diciembre de 2017. Para mayor información consulta bases, términos y condiciones.</p>
 			</div>
 			<!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right"> -->
 				<!-- <img src="<?php echo base_url().$this->session->userdata('c6'); ?>"> -->

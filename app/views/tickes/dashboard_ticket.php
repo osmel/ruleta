@@ -80,7 +80,7 @@
 
 				</div>
 				
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: -12px;">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="margin-top: -12px;">
 						<button type="submit" class="btn btn-info ingresar" value="REGISTRARME"/>
 								REGISTRAR
 						</button>

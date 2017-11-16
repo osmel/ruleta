@@ -66,33 +66,20 @@
 			<li>
 									<a href="<?php echo base_url(); ?>mecanica" class="">mecánica y premios</a> 
 								</li>
-								<li class="ocultarpunto">
-									<span class="punto">
-									&#9679;
-									</span>
-								</li>
+								
 
 								<?php if ($this->session->userdata('session_participante') == true) { ?>
 								<li>
 									<a href="<?php echo base_url(); ?>ingresar_usuario" class="">PARTICIPAR</a> 
 								</li>
-								<li class="ocultarpunto">
-									<span class="punto">
-									&#9679;
-									</span>
-								</li>
+								
 					
 					             <?php }else{ ?>
 									
 					             <li>
 									<a href="<?php echo base_url(); ?>ingresar_usuario" class="">INGRESAR</a> 
 								</li>
-								<li class="ocultarpunto">
-									<span class="punto">
-									&#9679;
-									</span>
-								</li>
-
+								
 					             <?php } ?> 
 
 								
@@ -103,21 +90,13 @@
 										<li>								
 									<a href="<?php echo base_url(); ?>registro_usuario" class="">CREAR CUENTA</a>
 								</li>
-								<li class="ocultarpunto">
-									<span class="punto">
-									&#9679;
-									</span>
-								</li>
+								
 					             <?php } ?> 
 								
 								<li>
 									<a href="<?php echo base_url(); ?>aviso" class="">AVISO DE PRIVACIDAD</a> 
 								</li>
-								<li class="ocultarpunto">
-									<span class="punto">
-									&#9679;
-									</span>
-								</li>
+								
 								<li>
 									<a href="<?php echo base_url(); ?>legales" class="">LEGALES</a> 
 								</li>

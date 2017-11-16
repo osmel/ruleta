@@ -7,10 +7,10 @@
 
 <div class="container aviso">
   <div class="row">
-    <div class="col-lg-6 col-md-6 col-sm-10 col-xs-12" style="margin: 0px auto;float: none !important;">
-      <h2 class="text-center">AVISO DE PRIVACIDAD</h2>
-      <img class="lineaabajo" src="<?php echo base_url()?>img/new/linea.png">
-    </div>
+    <div class="container registro">  
+<div class="col-md-12 text-center" style="margin-top:30px;margin-bottom:20px">
+  <img src="<?php echo base_url()?>img/aviso.png">
+</div>
   </div>
   
     
