@@ -12,9 +12,9 @@
 	<div class="modal-body">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
 			<span class="titular1">
-        		 FELICIDADES
+        		 <img src="<?php echo base_url()?>img/felicidades.png" style="width:100%">
         	</span>
-        	<span class="pregunta">
+        	<span class="ganastext">
         		¡GANASTE <?php echo $total; ?> PUNTOS!
         		  
         	</span>

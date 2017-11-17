@@ -743,7 +743,7 @@ function validar_tickets(){
 				    'general'=> '',
 			);
 
-			$this->form_validation->set_rules( 'monto', 'Monto de la compra', 'trim|required|numeric|min_length[1]|max_length[20]|xss_clean|greater_than[45]');				
+			$this->form_validation->set_rules( 'monto', 'Monto de la compra', 'trim|required|numeric|min_length[1]|max_length[20]|xss_clean|greater_than[99]');				
 			$this->form_validation->set_rules( 'ticket', 'Núm de Ticket', 'trim|required|min_length[28]|min_length[28]|xss_clean');	//numeric|
 			
 			$this->form_validation->set_rules( 'compra', 'Fecha de Compra', 'trim|required|callback_valid_fecha[compra]|xss_clean');

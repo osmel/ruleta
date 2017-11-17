@@ -17,7 +17,7 @@
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center contadores">
 	
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h1>GIRA LA RULETA Y ACUMULA PUNTOS</h1>
+            <h1 class="giras">GIRA LA RULETA Y ACUMULA PUNTOS</h1>
             <div class="wheelContainer">       
                 <svg class="wheelSVG" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" text-rendering="optimizeSpeed">
                     <defs>
@@ -65,21 +65,12 @@
             
              <button type="button" class="spinBtn" style="background-color: transparent;
     border: 0px;display: inline-block;"><img src="<?php echo base_url()?>img/boton.png"></button>
-                <h1 style="display: inline-block;"> GIRAR</h1>
+                <h1 style="display: inline-block;" class="giras"> GIRAR</h1>
             
 		</div>
 
 
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center">
-			<div class="countdown"><?php echo $cantidad; ?></div>
-			<h5>Cantidad de veces Jugas</h5>
-
-		</div>
 		
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center">			
-			<div class="cant"><?php echo $total_iguales; ?></div>
-			<h5>CORAZONES ACUMULADOS <br>EN TU CUENTA</h5>
-		</div>		 
 	</div>
 
     
