@@ -371,7 +371,7 @@ FROM calimax_registro_participantes
 
 
          public function felicidades(){
-
+            /*
              $this->db->select("
              sum(
                   (
@@ -395,6 +395,38 @@ FROM calimax_registro_participantes
                ) AS total_iguales
               ",false );
           $this->db->from($this->registro_participantes.' as r');
+          */
+
+             //$this->db->select("COUNT(r.id_participante) as 'cantidad'");
+
+             $this->db->select("
+             sum(
+
+
+                  (
+                  (r.responder=1)* (AES_DECRYPT( r.valor,  '{$this->key_hash}')) 
+                )    +
+
+
+                (
+                  (r.responder<>1)* 25
+                ) 
+               
+
+               )+
+                (
+                  (p.redes=1)* 100
+                ) AS total_iguales
+
+              ",false );
+
+                         
+          $this->db->select("AES_DECRYPT(r.tarjeta,'{$this->key_hash}') AS tarjeta", FALSE);
+          $this->db->select("AES_DECRYPT(r.juego,'{$this->key_hash}') AS juego", FALSE);
+          $this->db->from($this->participantes.' as p');
+          $this->db->join($this->registro_participantes.' as r', 'p.id = r.id_participante','left');
+
+
           $this->db->where("r.id_participante", '"'.$this->session->userdata('id_participante').'"',false);  
           $this->db->where('r.ticket',"AES_ENCRYPT('{$this->session->userdata('num_ticket_participante')}','{$this->key_hash}')",FALSE);
 
