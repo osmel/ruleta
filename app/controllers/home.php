@@ -155,6 +155,13 @@ AES_DECRYPT(tarjeta, 'gtg5igLZasUC3xNfDlvTGBxxkoMuR6FaCYw5') AS tarjeta
 
 	}
 
+	function recetas(){ 
+		
+		$this->load->view( 'dashboard/recetas' );
+
+	}
+
+
 	function facebook(){ 
 		
 		$this->load->view( 'facebook' );

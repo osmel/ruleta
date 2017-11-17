@@ -56,6 +56,7 @@ function myGameEnd(e) {
        
 
    valor=e.results[0].userData.score;
+   //alert("si");
                         jQuery.ajax({ //guardar en la cookie el conteo
                                 url : '/respuesta_tarjeta',
                                 data : { 

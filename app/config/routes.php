@@ -63,7 +63,7 @@ $route['record/(:any)']								= 'home/record/$1';
 
 $route['mecanica']							= 'home/mecanica';
 $route['facebook']							= 'home/facebook';
-
+$route['recetas']							= 'home/recetas';
 $route['aviso']							= 'home/aviso';
 $route['legales']							= 'home/legales';
 $route['eleccion_premio']							= 'home/eleccion_premio';

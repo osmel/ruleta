@@ -298,7 +298,7 @@ function validar_registros(){
 			$this->form_validation->set_rules( 'cp', 'CP', 'trim|required|min_length[2]|max_length[100]|xss_clean');
 			$this->form_validation->set_rules('id_estado', 'Ciudad', 'required|callback_valid_option|xss_clean');
 			$this->form_validation->set_rules( 'celular', 'Celular', 'trim|required|numeric|min_length[10]|callback_valid_phone|xss_clean');
-			$this->form_validation->set_rules( 'telefono', 'Teléfono', 'trim|required|numeric|min_length[8]|callback_valid_phone|xss_clean');
+			$this->form_validation->set_rules( 'telefono', 'Teléfono', 'trim|numeric|min_length[8]|callback_valid_phone|xss_clean');
 			//$this->form_validation->set_rules( 'id_estado_compra', 'Cd. de compra', 'required|callback_valid_option|xss_clean');
 			$this->form_validation->set_rules( 'ciudad', 'Cd. de compra', 'trim|required|callback_nombre_valido|min_length[3]|max_length[50]|xss_clean');
 			$this->form_validation->set_rules( 'nick', 'NickName', 'trim|required|min_length[3]|max_length[50]|callback_cadena_noacepta|xss_clean');
@@ -380,14 +380,14 @@ function validar_registros(){
 
 									
 									//envio de correo para notificar alta en usuarios del sistema
-									/*
+
 									$desde = $this->session->userdata('c1');
 									$esp_nuevo = $usuario['email'];
-									$this->email->from('admin@vamonosaespanaconcalimax.com', 'Información Calimax');
+									$this->email->from('admin@promoscasaley.com.mx', 'Promos Casa Ley');
 									$this->email->to( $esp_nuevo );
-									$this->email->subject('Vamonos a españa con Calimax'); //.$this->session->userdata('c2')
+									$this->email->subject('Momentos para Compartir'); //.$this->session->userdata('c2')
 									$this->email->message( $this->load->view('admin/correos/alta_usuario', $dato, TRUE ) );
-									*/
+									$this->email->send();
 
 										 
 									//if ($this->email->send()) 

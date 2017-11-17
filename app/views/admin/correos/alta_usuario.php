@@ -13,20 +13,24 @@
     }
  ?> 
 
-	<table border="0" cellspacing="0" cellpadding="0" style="margin:30px auto; background-color:white; padding:0px; max-width:580px; width:100%">
+	<table border="0" cellspacing="0" cellpadding="0" style="margin:30px auto; background-color:#c71f3a; padding:0px; max-width:580px; width:100%">
 	  
 	  <tr>
-	   <!-- <img src="https://www.vamonosaespanaconcalimax.com/img/mailh.png" alt="imagenesdemail"> -->
+		<img src="https://www.promoscasaley.com.mx/img/mail1.png" alt="imagenesdemail">
 	  </tr>
 	  <tr>
 	   	 <td scope="row" style="text-align:center">
 	   	 	
-	    	<p style="font-family:'Myriad Pro', 'Myriad Pro Bold', Verdana, Arial; font-size:14px; text-transform: uppercase; color:#ef0711">
-	    	<p style="color:#ef0711;width:100%;text-align:center;font-size:28px;">Usuario: <b><?php echo $email; ?></b></p></br>
-	    	<p style="color:#ef0711;width:100%;text-align:center;font-size:28px;">Contraseña: <b><?php echo $contrasena; ?></b></p></br>
+	    	<p style="font-family:'Myriad Pro', 'Myriad Pro Bold', Verdana, Arial; font-size:14px; text-transform: uppercase; color:#ffffff">
+	    	<p style="color:#ffffff;width:100%;text-align:center;font-size:28px;">Nombre de usuario: <b><?php echo $email; ?></b></p></br>
+	    	<p style="color:#ffffff;width:100%;text-align:center;font-size:28px;">Contraseña: <b><?php echo $contrasena; ?></b></p></br>
 	    	</p>
 	   	 </td>
 	  </tr>
+	  <tr>
+		<img src="https://www.promoscasaley.com.mx/img/mail2.png" alt="imagenesdemail">
+	  </tr>
+
 	  <tr>
 	   	<!-- <img src="https://www.vamonosaespanaconcalimax.com/img/mailf.png" alt="imagenesdemail"> -->
 	  </tr>

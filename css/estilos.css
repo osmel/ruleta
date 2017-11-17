@@ -51,7 +51,6 @@ a {
 }
 
 
-
 footer {
 
   color: #fff;
@@ -199,7 +198,7 @@ li.logo_casaley img {
   top: 50%;
   left: 50%;
   margin-left: -75px;
-  margin-top: -40px;
+  margin-top: -95px;
 }
 
 .contadores {
@@ -2189,7 +2188,7 @@ a:hover, a:focus {
       color: #ffffff;
   text-transform: uppercase;
   padding-right: 18px;
-  font-size: 20px;
+  font-size: 23px;
   font-family: Bebasbold;
       text-align: center;
 }
@@ -2305,4 +2304,10 @@ a:hover, a:focus {
   }
 }
 
-
+.receta img{
+  width: 100%;
+  margin-bottom: 40px;
+}
+.recetagrande{
+  padding-top: 150px;
+}

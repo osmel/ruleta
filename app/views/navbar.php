@@ -96,6 +96,10 @@
 								<li>
 									<a href="<?php echo base_url(); ?>aviso" class="">AVISO DE PRIVACIDAD</a> 
 								</li>
+
+								<li>
+									<a href="<?php echo base_url(); ?>recetas" class="">RECETAS</a> 
+								</li>
 								
 								<li>
 									<a href="<?php echo base_url(); ?>legales" class="">LEGALES</a> 

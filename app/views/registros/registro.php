@@ -98,21 +98,13 @@
 					</div>
 
 					<div class="form-group">
-						
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						
-							
-								<select name="id_estado" id="id_estado" class="form-control">
-									<option value="" disabled selected>CIUDAD</option>
-										<?php foreach ( $estados as $estado ){ ?>
-												<option value="<?php echo $estado->id; ?>"><?php echo $estado->nombre; ?></option>
-												
-										<?php } ?>
-								</select>
-								 <span class="help-block" style="color:white;" id="msg_id_estado"> </span>
-							
+							<input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="CIUDAD DE RESIDENCIA">
+							<span class="help-block" style="color:white;" id="msg_ciudad"> </span> 
 						</div>
 					</div>
+					
+					
 					
 
 		
@@ -141,9 +133,19 @@
 					</div>
 
 					<div class="form-group">
+						
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="CIUDAD DONDE HIZO LA COMPRA">
-							<span class="help-block" style="color:white;" id="msg_ciudad"> </span> 
+						
+							
+								<select name="id_estado" id="id_estado" class="form-control">
+									<option value="" disabled selected>CIUDAD DONDE HIZO LA COMPRA</option>
+										<?php foreach ( $estados as $estado ){ ?>
+												<option value="<?php echo $estado->id; ?>"><?php echo $estado->nombre; ?></option>
+												
+										<?php } ?>
+								</select>
+								 <span class="help-block" style="color:white;" id="msg_id_estado"> </span>
+							
 						</div>
 					</div>
 
@@ -172,14 +174,14 @@
 
 					
 					<div class="form-group">
-						<input style="float:left;width:20px;" checked type="checkbox" id="coleccion_id_aviso" value="1"  name="coleccion_id_aviso" />
+						<input style="float:left;width:20px;" type="checkbox" id="coleccion_id_aviso" value="1"  name="coleccion_id_aviso" />
 			              <label>
 			              		Acepto <a href="<?php echo base_url().'legales'; ?>" class="linkaviso" target="_blank">términos y condiciones</a>
 			              </label>
 			              <span class="help-block" id="msg_coleccion_id_aviso"> </span> 
 
 
-						  <input style="float:left;width:20px;" checked type="checkbox" id="coleccion_id_base" value="1"  name="coleccion_id_base" />
+						  <input style="float:left;width:20px;" type="checkbox" id="coleccion_id_base" value="1"  name="coleccion_id_base" />
 			              <label >
 			              		Acepto <a href="<?php echo base_url().'aviso'; ?>" class="linkaviso" target="_blank">el aviso de privacidad</a>
 			              </label>     
