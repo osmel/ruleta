@@ -385,10 +385,17 @@ function validar_registros(){
 									$esp_nuevo = $usuario['email'];
 									$this->email->from('admin@promoscasaley.com.mx', 'Promos Casa Ley');
 									$this->email->to( $esp_nuevo );
-									$this->email->subject('Momentos para Compartir'); //.$this->session->userdata('c2')
+									$this->email->subject('Momentos para Compartir SUKARNE'); //.$this->session->userdata('c2')
 									$this->email->message( $this->load->view('admin/correos/alta_usuario', $dato, TRUE ) );
 									$this->email->send();
 
+									$desde = $this->session->userdata('c1');
+									$esp_nuevo = $usuario['email'];
+									$this->email->from('admin@promoscasaley.com.mx', 'Promos Casa Ley');
+									$this->email->to( $esp_nuevo );
+									$this->email->subject('Momentos para Compartir SUKARNE'); //.$this->session->userdata('c2')
+									$this->email->message( $this->load->view('admin/correos/receta', $dato, TRUE ) );
+									$this->email->send();
 										 
 									//if ($this->email->send()) 
 										//{	//si se notifico al usuario, que envie a los administradores un correo
@@ -633,6 +640,7 @@ function validar_registros(){
 	function validar_recuperar_participante(){  //NO FUNCIONA ERA PARA RECUPERAR CONTRASEÑA
 		$mis_errores=array(
 				    'general'=> '',
+				    'exito' =>false,
 		);
 
 		$this->form_validation->set_rules( 'email', 'Email', 'trim|required|valid_email|xss_clean');
@@ -648,15 +656,20 @@ function validar_registros(){
 
 				if ( $usuario_check != FALSE ){
 						$data= $usuario_check[0]; 	
-						$desde = $this->session->userdata('c1');
-						$this->email->from($desde,$this->session->userdata('c2'));
+						//$desde = $this->session->userdata('c1');
+						//$this->email->from($desde,$this->session->userdata('c2'));
+						$this->email->from('admin@promoscasaley.com.mx', 'Promos Casa Ley');
 						$this->email->to($correo_enviar);
-						$this->email->subject('Recuperación de contraseña de '.$this->session->userdata('c2'));
+						//$this->email->subject('Recuperación de contraseña de '.$this->session->userdata('c2'));
+						$this->email->subject('Recuperación de contraseña de '.'Promos Casa Ley');
 						$this->email->message($this->load->view('registros/correos/envio_contrasena', $data, true));
 						
 						if ($this->email->send()) {
 						
-							$mis_errores = true;					
+							//$mis_errores = true;	
+							$mis_errores['exito'] = true;
+							$mis_errores['redireccion'] = 'ingresar_usuario';
+							
 						} else 
 							//$mis_errores = false;
 							$mis_errores["general"] = '<span class="error">Su correo no ha podido salir, error conexión.</span>';
