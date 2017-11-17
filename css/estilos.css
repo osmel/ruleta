@@ -157,6 +157,7 @@ li.logo_casaley img {
       margin-bottom: -100px;
     margin-top: 100px;
     font-family: Bebasbold;
+    display: inline-block;
 }
 .giras2{
     font-family: Bebasbold;
@@ -194,11 +195,8 @@ li.logo_casaley img {
   box-shadow: none !important; 
 }
 .logo_centro {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -75px;
-  margin-top: -95px;
+  display: none;
+ 
 }
 
 .contadores {
@@ -1430,10 +1428,14 @@ p.datos span:nth-child(2) {
 }
 .felic{
     font-size: 45px;
-    color: #002b59;
+    color: #ffffff;
     text-align: center;
     font-weight: bold;
     padding-top: 27px;
+}
+h4 {
+    color: #ffffff;
+    font-size: 18px;
 }
 #form_sino .close:hover, .close:focus{
       color: #ffffff !important;

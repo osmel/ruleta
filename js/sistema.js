@@ -73,11 +73,11 @@ jQuery(document).ready(function($) {
 						spinner.stop();
 						jQuery('#foo').css('display','none');
 						//ya no redirecciona directo a registro ticket
-						//window.location.href = '/'+data.redireccion;    //$catalogo;						
+						//window.location.href = '/sukarne/'+data.redireccion;    //$catalogo;						
 
 						
 						//new ok 
-						var url = "/proc_modal_facebook";
+						var url = "/sukarne/proc_modal_facebook";
 						//alert(url);
 						jQuery('#modalMessage_face').modal({
 							  show:'true',
@@ -94,7 +94,7 @@ jQuery(document).ready(function($) {
 
 		//sino comparte en facebook entonces redirige directamente al ticket sin guardar redes
 	   jQuery("body").on('hide.bs.modal','#modalMessage_face',function(e){    
-                window.location.href = '/registro_ticket';                           
+                window.location.href = '/sukarne/registro_ticket';                           
        }); 
 
 
@@ -125,7 +125,7 @@ jQuery(document).ready(function($) {
 						$catalogo = e.target.name;
 						spinner.stop();
 						jQuery('#foo').css('display','none');
-						window.location.href = '/'+data.redireccion;    //$catalogo;				
+						window.location.href = '/sukarne/'+data.redireccion;    //$catalogo;				
 				}
 			} 
 		});
@@ -136,8 +136,8 @@ jQuery(document).ready(function($) {
             jQuery("body").on('hide.bs.modal','#modalMessage3',function(e){    
                 $catalogo = jQuery(this).attr('direccion'); //e.target.name;
                 //alert($catalogo);
-                window.location.href = '/'+$catalogo;                           
-                //window.location.href = '/';
+                window.location.href = '/sukarne/'+$catalogo;                           
+                //window.location.href = '/sukarne/';
             }); 
 
                  jQuery('body').on('click','.btn_respuesta', function (e) {  
@@ -145,7 +145,7 @@ jQuery(document).ready(function($) {
                 
                   e.preventDefault();
                     jQuery.ajax({ //guardar en la cookie el conteo
-                            url : '/respuesta_juego',
+                            url : '/sukarne/respuesta_juego',
                             data : { 
                                    figura: $(this).attr('fig'),
                                 respuesta: $(this).attr('resp'),
@@ -157,10 +157,10 @@ jQuery(document).ready(function($) {
                                   localStorage.setItem('virada',  0 );
 
                                   //redireccionar a record
-                                  //window.location.href = '/'+data.redireccion;        
+                                  //window.location.href = '/sukarne/'+data.redireccion;        
 
                                     //levantar la modal de felicidades
-                                    var url = "/proc_modal_felicidades";  
+                                    var url = "/sukarne/proc_modal_felicidades";  
                                     jQuery('#modalMessage3').modal({
                                         show:'true',
                                         remote:url,
@@ -183,10 +183,10 @@ https://www.sitepoint.com/build-javascript-countdown-timer-no-dependencies/
 */
 var hash_url = window.location.pathname;
 
-	if  (hash_url=="/juegos") { //registro ticket
+	if  (hash_url=="/sukarne/juegos") { //registro ticket
 		var started =0;
 			jQuery.ajax({
-				        url : '/num_conteo',
+				        url : '/sukarne/num_conteo',
 				        data : { 
 				        	//started: started,
 				        },
@@ -231,7 +231,7 @@ var hash_url = window.location.pathname;
 													started=0;
 
 													jQuery.ajax({ //guardar en la cookie el conteo
-													        url : '/num_conteo',
+													        url : '/sukarne/num_conteo',
 													        data : { 
 													        	started: started,
 													        },
@@ -241,7 +241,7 @@ var hash_url = window.location.pathname;
 
 													        	started = data.num;
 
-												        	    var url = "/proc_modal_juego/"+jQuery.base64.encode(minutes + ':' + seconds)+'/'+jQuery.base64.encode(1);
+												        	    var url = "/sukarne/proc_modal_juego/"+jQuery.base64.encode(minutes + ':' + seconds)+'/'+jQuery.base64.encode(1);
 																jQuery('#modalMessage').modal({
 																	  show:'true',
 																	remote:url,
@@ -255,7 +255,7 @@ var hash_url = window.location.pathname;
 								//cuando se oculta la ventana modal de juego redirige al 
 								jQuery("body").on('hide.bs.modal','#modalMessage[ventana="juegos"]',function(e){	
 									$catalogo = jQuery(this).attr('valor'); //e.target.name;
-									window.location.href = '/'+$catalogo;						    
+									window.location.href = '/sukarne/'+$catalogo;						    
 								});	
 
 
@@ -319,7 +319,7 @@ var hash_url = window.location.pathname;
 
 
 									jQuery.ajax({ //guardar en la cookie el conteo
-									        url : '/num_conteo',
+									        url : '/sukarne/num_conteo',
 									        data : { 
 									        	started: started,
 									        },
@@ -330,7 +330,7 @@ var hash_url = window.location.pathname;
 									        	started = data.num;
 
 									        		if (started==0){
-										        		var url = "/proc_modal_juego/"+jQuery.base64.encode(localStorage.getItem('miTiempo'))+'/'+jQuery.base64.encode(1);
+										        		var url = "/sukarne/proc_modal_juego/"+jQuery.base64.encode(localStorage.getItem('miTiempo'))+'/'+jQuery.base64.encode(1);
 															jQuery('#modalMessage').modal({
 																  show:'true',
 																remote:url,
@@ -461,10 +461,10 @@ var hash_url = window.location.pathname;
 
 
 						if (transaccion<100) {
-							var url = "/proc_modal_cero_puntos";	
+							var url = "/sukarne/proc_modal_cero_puntos";	
 
 						} else {
-							var url = "/proc_modal_instrucciones";	
+							var url = "/sukarne/proc_modal_instrucciones";	
 						}
 						
 
@@ -477,7 +477,7 @@ var hash_url = window.location.pathname;
 						$catalogo = e.target.name;
 						spinner.stop();
 						jQuery('#foo').css('display','none');
-						window.location.href = '/'+$catalogo;				
+						window.location.href = '/sukarne/'+$catalogo;				
 						
 
 				}
@@ -497,7 +497,7 @@ jQuery("body").on('hide.bs.modal','#modalMessage[ventana="redi_ticket"]',functio
 						} else {
 							$catalogo = jQuery(this).attr('valor'); //e.target.name;
 						}
-						window.location.href = '/'+$catalogo;						    
+						window.location.href = '/sukarne/'+$catalogo;						    
 
 
 });
@@ -515,13 +515,13 @@ jQuery("body").on('hide.bs.modal','#modalMessage[ventana="redi_ticket"]',functio
 
 	jQuery("body").on('hide.bs.modal','#modalMessage[ventana="facebook"]',function(e){	
 		$catalogo = jQuery(this).attr('valor'); //e.target.name;
-		window.location.href = '/'+$catalogo;						    
-		//window.location.href = '/registrar_facebook/0';
+		window.location.href = '/sukarne/'+$catalogo;						    
+		//window.location.href = '/sukarne/registrar_facebook/0';
 	});	
 
 
 
-  	jQuery("#ticket").inputmask("9999 9999 9999 9999 9999 9999", {
+  	jQuery("#ticket").inputmask("9999 9999 9999 9999 9999 999", {
             placeholder: " ",
             clearMaskOnLostFocus: true
     });
@@ -555,7 +555,7 @@ jQuery("body").on('hide.bs.modal','#modalMessage[ventana="redi_ticket"]',functio
 						$catalogo = e.target.name;
 						spinner.stop();
 						jQuery('#foo').css('display','none');
-						window.location.href = '/'+$catalogo;				
+						window.location.href = '/sukarne/'+$catalogo;				
 				}
 			} 
 		});
