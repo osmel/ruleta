@@ -58,7 +58,7 @@ function myGameEnd(e) {
    valor=e.results[0].userData.score;
    //alert("si");
                         jQuery.ajax({ //guardar en la cookie el conteo
-                                url : '/respuesta_tarjeta',
+                                url : '/sukarne/respuesta_tarjeta',
                                 data : { 
                                        //figura: $(this).parent().attr('carta'),
                                        valor: valor, //$(this).parent().attr('valor'),
@@ -69,7 +69,7 @@ function myGameEnd(e) {
                                         localStorage.setItem('virada',  parseInt(localStorage.getItem('virada'))+1 );
                                         if ( parseInt(localStorage.getItem('virada')) >=1) {
                                             //localStorage.setItem('virada',  0 );
-                                            var url = "/proc_modal_juego";  
+                                            var url = "/sukarne/proc_modal_juego";  
                                             
                                             jQuery('#modalMessage').modal({
                                                 backdrop: 'static',
@@ -85,7 +85,7 @@ function myGameEnd(e) {
 
 
   /*
-  var url = "/proc_modal_juego";  
+  var url = "/sukarne/proc_modal_juego";  
                 
                 jQuery('#modalMessage').modal({
                     backdrop: 'static',
@@ -95,7 +95,7 @@ function myGameEnd(e) {
                 });
                 */
   /*
-   var url = "/proc_modal_ticket/"+jQuery.base64.encode(minutes + ':' + seconds)+'/'+jQuery.base64.encode(1);
+   var url = "/sukarne/proc_modal_ticket/"+jQuery.base64.encode(minutes + ':' + seconds)+'/'+jQuery.base64.encode(1);
         jQuery('#modalMessage').modal({
             show:'true',
           remote:url,
@@ -140,7 +140,7 @@ function init() {
                // alert('aa');
                 //localStorage.setItem('virada',  0 );
                 //alert('aa');
-                var url = "/proc_modal_juego";  
+                var url = "/sukarne/proc_modal_juego";  
                 
                 jQuery('#modalMessage').modal({
                     backdrop: 'static',

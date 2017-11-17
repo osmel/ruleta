@@ -773,7 +773,9 @@ footer .vigencia {
 
 }
 @media screen and (max-width: 767px) {
-  
+  .wheelContainer {
+  height: auto !important;
+}
   form#registra {
     margin-top: -35px;
   }

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Cerremos con broche de oro</title>
+<title></title>
 </head>
 <body style="background:#e9e9e9">
 <?php 
@@ -16,7 +16,7 @@
 	<table border="0" cellspacing="0" cellpadding="0" style="margin:30px auto; background-color:#c71f3a; padding:0px; max-width:580px; width:100%">
 	  
 	  <tr>
-		<img src="https://www.promoscasaley.com.mx/sukarne/img/mail1.png" alt="imagenesdemail">
+		<img src="https://www.promoscasaley.com.mx/sukarne/img/mail1.png">
 	  </tr>
 	  <tr>
 	   	 <td scope="row" style="text-align:center">
@@ -28,7 +28,7 @@
 	   	 </td>
 	  </tr>
 	  <tr>
-		<img src="https://www.promoscasaley.com.mx/sukarne/img/mail2.png" alt="imagenesdemail">
+		<img src="https://www.promoscasaley.com.mx/sukarne/img/mail2.png">
 	  </tr>
 
 	  <tr>

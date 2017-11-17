@@ -15,9 +15,9 @@
 
 
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center contadores">
-	
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h1 class="giras">GIRA LA RULETA Y ACUMULA PUNTOS</h1>
+	            <h1 class="giras" style="width:100%;">GIRA LA RULETA Y ACUMULA PUNTOS</h1>
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+
             <div class="wheelContainer">       
                 <svg class="wheelSVG" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" text-rendering="optimizeSpeed">
                     <defs>
@@ -61,7 +61,7 @@
 
 
         
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center">
             
              <button type="button" class="spinBtn" style="background-color: transparent;
     border: 0px;display: inline-block;"><img src="<?php echo base_url()?>img/boton.png"></button>
